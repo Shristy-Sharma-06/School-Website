@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Login({ props }) {
+function Login({ props, setIslogin }) {
   const navigate = useNavigate();
 
   const loginHandler = (e) => {
@@ -10,6 +10,7 @@ function Login({ props }) {
     if (
       props.user.some(user => user.username === props.username && user.password === props.password)
     ) {
+      setIslogin(true);
       console.log("Login Success");
       alert("login Successful")
       navigate("/dashboard");

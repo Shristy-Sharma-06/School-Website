@@ -4,6 +4,7 @@ import { Header, Signin, Login, Dashboard } from "./Components";
 import { useState } from "react";
 
 function App() {
+  const [islogin, setIslogin] = useState("false");
   const [user, setUser] = useState([
     { username: "admin", password: "123abc" },
   ]);
@@ -14,7 +15,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Header />
+        <Header islogin={islogin} setIslogin={setIslogin}  />
         <Routes>
           <Route path="signin" element={<Signin props={{user, setUser}} />} />
           <Route
@@ -22,6 +23,7 @@ function App() {
             element={
               <Login
                 props={{ user, username, setUsername, password, setPassword }}
+                setIslogin={setIslogin}
               />
             }
           />
