@@ -45,7 +45,7 @@ function Header({ islogin, setIslogin , props}) {
                   <RiAccountCircleFill className="text-2xl " size={30} />
                   <button
                     onClick={handleLogout}
-                    className="text-gray-700 hover:text-gray-300"
+                    className="text-gray-700 hover:text-orange-700"
                   >
                     Logout
                   </button>
