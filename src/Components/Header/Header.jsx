@@ -4,12 +4,12 @@ import Myimage from "../../assets/image/circle.jpg";
 import { RiMenuLine, RiAccountCircleFill } from "@remixicon/react";
 
 import { NavLink } from "react-router-dom";
-function Header({ islogin, setIslogin }) {
+function Header({ islogin, setIslogin , props}) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     setIslogin(false);
-    console.log(islogin)
+    console.log(islogin);
 
     navigate("/");
   };
@@ -40,11 +40,12 @@ function Header({ islogin, setIslogin }) {
 
             <li>
               {islogin ? (
+                
                 <div>
                   <RiAccountCircleFill className="text-2xl " size={30} />
                   <button
                     onClick={handleLogout}
-                    className="text-white hover:text-gray-300"
+                    className="text-gray-700 hover:text-gray-300"
                   >
                     Logout
                   </button>

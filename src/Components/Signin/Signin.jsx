@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Singin({ props }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+
   
   const signinHandler = (e) => {
     e.preventDefault();
@@ -21,6 +24,7 @@ function Singin({ props }) {
       
       console.log("User created:", username, password);
       alert("User created:", username, password)
+      navigate("/")
     } else {
       if (exist) {
         console.log("User already exists");
